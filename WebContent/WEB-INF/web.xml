@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>JavaWeb2018</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<!-- 2018.04.10 FirstServlet -->
+	<servlet>
+		<servlet-name>FirstServlet</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.FirstServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FirstServlet</servlet-name>
+		<url-pattern>/firstservlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- 2018.04.13 LoginServlet -->
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/loginServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- 2018.04.17 CookiesTest -->
+	<servlet>
+		<servlet-name>CookiesTest</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.CookiesTest</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CookiesTest</servlet-name>
+		<url-pattern>/cookiesTest</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.04.23 AuthorityFilter -->
+	<filter>
+	<filter-name>AuthorityFilter</filter-name>
+	<filter-class>cn.edu.lingnan.filter.AuthorityFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	<filter-name>AuthorityFilter</filter-name>
+	<url-pattern>/Admin/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- 2018.05.03 RegisterServlet -->
+	<servlet>
+		<servlet-name>RegisterServlet</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.RegisterServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterServlet</servlet-name>
+		<url-pattern>/registerservlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.05.10 LogoutServlet -->
+	<servlet>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/logoutServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.05.12 FindAllReader -->
+	<servlet>
+		<servlet-name>FindAllReader</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.FindAllReader</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindAllReader</servlet-name>
+		<url-pattern>/Admin/findAllReader</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.05.14 DeleteReaderServlet -->
+	<servlet>
+		<servlet-name>DeleteReaderServlet</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.DeleteReaderServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteReaderServlet</servlet-name>
+		<url-pattern>/Admin/deleteReaderServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.05.17 UpdateReaderServlet -->
+	<servlet>
+		<servlet-name>UpdateReaderServlet</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.UpdateReaderServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateReaderServlet</servlet-name>
+		<url-pattern>/Admin/updateReaderServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.05.27 TagExamples.tld -->
+	<jsp-config>
+	
+	<!-- 2018.05.27 TagExamples1 -->
+	<taglib>
+	<taglib-uri>/TagExample</taglib-uri>
+	<taglib-location>/WEB-INF/tlds/TagExample.tld</taglib-location>
+	</taglib>
+	
+	<!-- 2018.05.27 JSTLC 核心标签库的加载-->
+	<taglib>
+	<taglib-uri>/jstlc</taglib-uri>
+	<taglib-location>/WEB-INF/tlds/c.tld</taglib-location>
+	</taglib>
+	
+	<!-- 2018.05.27 JSTLSQL SQL标签库的加载-->
+	<taglib>
+	<taglib-uri>/jstlsql</taglib-uri>
+	<taglib-location>/WEB-INF/tlds/sql.tld</taglib-location>
+	</taglib>
+	</jsp-config>
+	
+	<!-- 2018.05.28 DeleteCheckServlet 批量删除用户信息-->
+	<servlet>
+		<servlet-name>DeleteCheckServlet</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.DeleteCheckServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteCheckServlet</servlet-name>
+		<url-pattern>/Admin/deleteCheckServlet</url-pattern>
+	</servlet-mapping>
+	
+</web-app>

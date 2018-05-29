@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>注册页面</title>
+
+	<!-- Meta-Tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="keywords" content="Travel Agency Sign In Form Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //Meta-Tags -->
+
+	<!-- Custom-Styleheet-Links -->
+		<link rel="stylesheet" href="css/style.css" 		 type="text/css" media="all">
+		<link rel="stylesheet" href="css/animate-custom.css" type="text/css" media="all">
+	<!-- //Custom-Styleheet-Links -->
+ 
+	<!-- Fonts --> 
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" type="text/css" media="all">
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700" 		  type="text/css" media="all">
+	<!-- //Fonts -->
+	
+	<script>
+	function check(){
+		if(form.rno.value == ""){
+			alert("rno不能为空...");  //弹出rno不能为空
+			form.rno.focus();
+			return false;
+		}
+		
+		if(form.rname.value == ""){
+			alert("rname不能为空...");  //弹出rno不能为空
+			form.rname.focus();
+			return false;
+		}
+		
+		if(form.password.value == ""){
+			alert("password不能为空...");  //弹出rno不能为空
+			form.password.focus();
+			return false;
+		}
+		var regm1 = /^[a-zA-Z_]+[a-zA-Z0-9]+$/;
+		if(!form.password.value.match(regm1)){
+			alert("密码格式错误，请以字母或者下划线开头...");
+			form.password.focus();
+			return false;
+		}
+			
+		if(form.superuser.value == ""){
+			alert("superuser不能为空...");  //弹出rno不能为空
+			form.superuser.focus();
+			return false;
+		}
+		var regm2 = /^[2]?$/;
+		if(!form.superuser.value.match(regm2)){
+			alert("superuser只能为2，请重新输入2...");
+			form.superuser.focus();
+			return false;
+		}
+	}
+	
+	
+	
+	</script>
+
+</head>
+
+<body>
+
+	<h1 class="小贝壳网站模板 agileits">LIBRARY READER REGISTER IN FORM</h1>
+
+	<div class="container 小贝壳网站模板 agileits">
+
+		<div class="content-left 小贝壳网站模板 agileits">
+			<img src="images/background.jpg" alt="小贝壳网站模板 Agileits">
+		</div>
+
+		<div class="content-right 小贝壳网站模板 agileits">
+			<section>
+				<div id="container_demo">
+  					<a class="hiddenanchor 小贝壳网站模板 agileits" id="tologin"></a>
+					<a class="hiddenanchor 小贝壳网站模板 agileits" id="toregister"></a>
+					<div id="wrapper">
+						<div id="login" class="animate 小贝壳网站模板 agileits form">
+						</div>  
+						<div id="register" class="animate 小贝壳网站模板 agileits form">
+							<h2>Register</h2>
+							<form  action="registerservlet" autocomplete="on" method="post" name="form">
+							        <label>Rno</label>
+									<input type="text" id="rno" name="rno" required="">
+									<label>Rname</label>
+									<input type="text" class="name 小贝壳网站模板 agileits" id="rname" name="rname" required="">
+									<label>Password</label>
+									<input type="password" id="password" name="password" required=""> 
+									<label>Superuser</label>
+									<input type="text" id="superuser" name="superuser" required=""> 
+									<div class="send-button 小贝壳网站模板 agileits">
+											<input type="submit" value="Register" onClick="return check();">
+										</form>
+  						<div class="clear"></div>
+					</div>
+					</form>
+				</div></div></div>				
+			</section>
+		</div>
+		<div class="clear"></div>
+	</div>
+
+</body>
+<!-- //Body -->
+
+</html>
