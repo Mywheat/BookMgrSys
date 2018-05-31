@@ -3,6 +3,7 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="WebApp_ID" version="3.0">
+	
 	<display-name>JavaWeb2018</display-name>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
@@ -132,6 +133,16 @@
 	<servlet-mapping>
 		<servlet-name>DeleteCheckServlet</servlet-name>
 		<url-pattern>/Admin/deleteCheckServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.05.30 RnameCheckServlet Ajax判断用户名是否已经注册-->
+	<servlet>
+		<servlet-name>RnameCheckServlet</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.RnameCheckServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RnameCheckServlet</servlet-name>
+		<url-pattern>/rnameCheckServlet</url-pattern>
 	</servlet-mapping>
 	
 </web-app>

@@ -1,752 +1,416 @@
 /*--
-    Author: 小贝壳网站模板
-    Author URL: http://www.smallseashell.com
-    License: Creative Commons Attribution 3.0 Unported
-    License URL: http://creativecommons.org/licenses/by/3.0/
+Author: 灏忚礉澹崇綉绔欐ā鏉�
+Author URL: http://www.smallseashell.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
-
-
-
-/*-- Reset Code --*/
-
-	html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
-	article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
-	ol,ul{list-style:none;padding:0;margin:0;}
-	blockquote,q{quotes:none;}
-	blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
-	table{border-collapse:collapse;border-spacing:0;}
-	a{text-decoration:none;}
-	.txt-rt{text-align:right;}
-	.txt-lt{text-align:left;}
-	.txt-center{text-align:center;}
-	.float-rt{float:right;}
-	.float-lt{float:left;}
-	.clear{clear:both;}
-	.pos-relative{position:relative;}
-	.pos-absolute{position:absolute;}
-	.vertical-base{vertical-align:baseline;}
-	.vertical-top{vertical-align:top;}
-	.underline{	padding-bottom:3px;	border-bottom: 1px solid #eee;}
-	nav.vertical ul li{display:block;}
-	nav.horizontal ul li{display: inline-block;}
-	img{max-width:100%;}
-
-/*-- Reset Code --*/
-
-
-
-/*-- Index-Page-Styling --*/
-
-body {
-    background: url("../images/bg.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+/*-- reset --*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+/*-- start editing from here --*/
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+/*-- end reset --*/
+body {   
+	font-family: 'Playfair Display', serif; 
+	height: 100%;
+}
+.video { 
+    background-position: 0px 0px; 
     -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    font-family: 'Open Sans', sans-serif;
-}
-
-body a {
-    transition:0.5s all;
-    -webkit-transition:0.5s all;
-    -moz-transition:0.5s all;
-    -o-transition:0.5s all;
-    -ms-transition:0.5s all;
-    text-decoration: none;
-}
-
+	-moz-background-size: cover;
+    background-size: cover;  
+	z-index: 9;
+	background-attachment:fixed;
+}  
 h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 45px;
-    font-weight: bold;
+    font-size: 2.3em;
+    text-align: center;
+    color: #FFF5EE;
+    font-weight: 500;
+    margin-bottom: 1em;
+	letter-spacing: 1px;
+}
+.login-form h2{
+    font-size: 2.0em;
     color: #FFF;
     text-align: center;
+    margin-bottom: 1.5em;
+    line-height: 0.7em;
+    font-family: 'Playfair Display', serif;
+    font-weight: 100;
+    letter-spacing: 2px;
 }
-
-.container {
-    width: 75%;
+/*-- main --*/
+.main {
+    padding: 2em 0 0;
+    text-align: center;
+    background: rgba(138, 43, 226, 0.58);
+}
+.main-w3lsrow {
+    margin: 0 auto;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%; 
+    border-radius: 50%;
+    border: 1px solid #FFE4E1;
+    width: 550px;
+    height: 550px;
+    display: table;
+    vertical-align: middle;
+}
+.login-form {
+    background-size: cover;
+    text-align: left;
+    padding: 0 5em;
+    display: table-cell;
+    vertical-align: middle;
+}
+.login-form input[type="text"], .login-form input[type="password"] {
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    padding: .6em 1em;
+    margin: 0;
+    width: 91%;
+    border: 1px solid rgb(255, 255, 255);
+    -webkit-appearance: none;
+    display: block;
+    background: transparent;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    -ms-border-radius: 2px;
+    border-radius: 2px;
+}
+.login-form p {
+    font-size: 0.9em;
+    color: #fff;
+    margin: 1.5em 0 .8em;
+    font-weight: 200;
+    letter-spacing: 6px;
+}
+/*-- checkbox --*/
+input.checkbox {
+    background: #fff;
+    cursor: pointer;
+    vertical-align: top;
+    margin: 1px 8px 0 0; 
+}
+input.checkbox:before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: inherit;
+}
+input.checkbox:after {
+    content: "";
+    position: absolute;
+	top: 1px;
+    left: 0;
+    z-index: 1;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border: 2px solid #fff;
+    -webkit-transition: .4s all;
+    -moz-transition: .4s all;
+    -o-transition: .4s all;
+    -ms-transition: .4s all;
+    transition: .4s all;
+}
+input.checkbox:checked:after {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    border-color: #8a2ce2;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    background: transparent;
+    top: 4px;
+    left: 3px;
+    width: 9px;
+    height: 3px;
+} 
+@keyframes rippling {
+	50% {
+		border-left-color: #8a2ce2;
+	}
+	100% {
+		border-bottom-color: #8a2ce2;
+		border-left-color: #8a2ce2;
+	}
+}  
+/*-- //checkbox --*/
+.login-form input[type="submit"] {
+    font-size: 1em;
+    color: #fff;
+    background:#9933cc;
+    border: 1px solid #fff;
+    outline: none;
+    cursor: pointer;
+    padding: .6em 1em;
+    -webkit-appearance: none;
+    width: 100%;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px; 
+    margin-top: 2em; 
+	font-family: 'Roboto Condensed', sans-serif;
+	transition: 0.5s all ;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+.login-form input[type="submit"]:hover {
+    background: transparent;
+    color: #fff;   
+} 
+.login-agileits-bottom {
+    margin-top:1.6em;
+    text-align: center; 
+}
+.login-agileits-bottom h6 {
+    font-size: 1em;
+    font-weight: 200;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 5px;
+}
+.login-agileits-bottom h6 a {
+    color: #fff;
+    transition: 0.5s all ;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+.login-agileits-bottom h6 a:hover{
+    color: #d2a2ff; 
+}
+/*-- //main --*/ 
+/*-- copyright --*/
+.copyright {
+    padding: 2.4em 0 2em;
+    text-align: center;
+}
+.copyright p {
+    font-size: 1em;
+    color: #fff;
+	line-height:1.8em;
+	letter-spacing: 1px;
+}
+.copyright p a{
+    color: #fff; 
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+	transition: 0.5s all;
+}
+.copyright p a:hover{
+    color: #d2a2ff;	
+}
+/*-- //copyright --*/
+/*-- responsive-design --*/ 
+@media(min-width:1680px){
+.main {
+    padding:5em 0; 
+}
+h1 {
+    font-size: 3.8em; 
+}
+.main-w3lsrow {
+    margin: 6em auto; 
+	width: 650px;
+    height: 650px;
+}
+.copyright {
+    padding: 2.4em 0 5em; 
+}
+}
+@media(max-width:800px){
+.main-w3lsrow { 
+    width: 500px;
+    height: 500px; 
+}
+h1 {
+    font-size: 2.6em; 
+}
+.login-form input[type="text"], .login-form input[type="password"] { 
+    width: 90%; 
+}
+.login-agileits-bottom h6 { 
+    letter-spacing: 3px;
+}
+.login-form h2{
+    font-size: 2em; 
+	margin-bottom: 1.2em;
+}
+} 
+@media(max-width:640px){
+h1 {
+    font-size: 2.4em;
+}
+.login-form input[type="submit"] { 
+    margin-top: 1.5em; 
+} 
+} 
+@media(max-width:568px){
+.main-w3lsrow {
+    width: 400px;
+    height: 400px;
+}
+.login-form input[type="text"],.login-form input[type="password"],.login-form input[type="submit"] { 
+    font-size: 0.9em; 
+    padding: .5em 0.8em; 
+}
+.login-form p {
+    font-size: 0.8em; 
+    margin:1.2em 0 .8em; 
+    letter-spacing: 4px;
+}
+h1 {
+    font-size: 2.2em;
+}
+.login-form h2 {
+    font-size: 1.8em;
+    margin-bottom: 1em;
+}
+.anim {
+    font-size: 0.8em; 
+    margin: 1.5em 0 0; 
+    letter-spacing: 2px;
+}
+.copyright p {
+    font-size: 0.9em; 
+    padding: 0 1em;
+} 
+.login-agileits-bottom h6 {
+    font-size: 0.9em; 
+    letter-spacing: 3px;
+}
+}
+@media(max-width:480px){
+h1 {
+    font-size: 1.9em;
+}  
+.login-form { 
+    padding: 0 4em; 
+}
+}
+@media(max-width:414px){ 
+h1 {
+    font-size: 1.8em;
+} 
+.main {
+    padding: 3.5em 0;
+}
+.main-w3lsrow {
+    width: 350px;
+    height: 350px;
+    border-width: 2px;
+    margin: 1.2em auto;
+}
+.login-form h2 {
+    font-size: 1.4em;
+    margin-bottom: 1em;
+}
+.login-form p {
+    font-size: 0.75em;
+    margin: 1em 0 .2em;
+    letter-spacing: 2px;
+}
+.anim {
+    font-size: 0.75em; 
+}
+.login-agileits-bottom {
+    margin-top: 1em; 
+}
+.login-form input[type="text"], .login-form input[type="password"] {
+    width: 89%;
+}
+} 
+@media(max-width:384px){   
+.main-w3lsrow { 
     margin: 0 auto;
 }
-
-.content-left, .content-right {
-    width: 50%;
-    float: left;
+.main {
+    padding: 2em 0 1.7em;
 }
-
-.content-left {
-    position: relative;
 }
-
-.content-left p {
-    position: absolute;
-    top: 40%;
-    left: 48%;
-    -ms-transform: translate(-40%, -40%);
-    transform: translate(-40%, -40%);
-    color: #FFF;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 30px;
-    line-height: 45px;
-    width: 80%;
+@media(max-width:320px){  
+.main {
+    padding: 1.5em 0 0;
 }
-
-.content-left a.more {
-    position: absolute;
-    top: 60%;
-    left: 32.7%;
-    -ms-transform: translate(-32.7%, -60%);
-    transform: translate(-50%, -60%);
-    padding: 13px 40px;
-    border-radius: 3px;
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    /*--小贝壳网站模板--*/
-    /*--agileits--*/
-    color: #2a2344;
-    background-color: #FFF;
+h1 {
+    font-size: 1.6em; 
+} 
+.main-w3lsrow {
+    width: 300px;
+    height: 300px; 
 }
-
-.list {
-    position: absolute;
-    bottom: 5%;
-    left: 40%;
-    -ms-transform: translate(-40%, -5%);
-    transform: translate(-50%, -5%);
+.login-form input[type="text"], .login-form input[type="password"], .login-form input[type="submit"] {
+    font-size: 0.8em;
+    padding: .5em 0.8em;
 }
-
-.list ul li {
-    display: inline-block;
+.login-form p {
+    font-size: 0.7em; 
 }
-
-.li2 {
-    margin: 0 30px;
-}
-
-.list ul li a {
-    color: #EEE;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-}
-
-a.hiddenanchor{
-    display: none;
-}
-
-#wrapper {
-    width: 100%;
-    position: relative;
-}
-
-#wrapper h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 30px;
-    margin-bottom: 30px;
-    color: #FFF;
-}
-
-.send-button a {
-    width: 50%;
-    float: left;
-    font-family: 'Montserrat', sans-serif;
-    color: #E91E63;
-    font-size: 14px;
-    /*--小贝壳网站模板--*/
-    /*--agileits--*/
-    padding-top: 20px;
-}
-
-#wrapper label {
-    font-family: 'Montserrat', sans-serif;
-    color: #fff;
-    font-size: 14px;
-}
-
-#wrapper input[type="text"], #wrapper input[type="password"] {
-    width: 89%;
-    color: #fff;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    margin: 10px 0 20px;
-    font-size: 16px;
+.anim {
+    font-size: 0.7em;
+	margin: 1em 0 0;
     letter-spacing: 1px;
-    padding: 10px 5px 10px 40px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    background: transparent;
-    outline: none;
 }
-
-#wrapper input[type="text"] {
-    background: url("../images/mail.png") no-repeat 13px 13px;
+input.checkbox:before { 
+    width: 15px;
+    height: 14px; 
 }
-
-#wrapper input[type="password"] {
-    background: url("../images/password.png") no-repeat 13px 13px;
+input.checkbox:after { 
+    width: 11px;
+    height: 8px; 
 }
-
-p.change_link {
-    font-family: 'Montserrat', sans-serif;
-    color: #EEE;
-    width: 100%;
-    margin: 32px 0;
-    font-size: 14px;
+input.checkbox:checked:after { 
+    top: 3px;
+    left: 2px;
+    width: 7px;
+    height: 2px;
+} 
+.login-agileits-bottom h6 {
+    font-size: 0.75em;
+    letter-spacing: 2px;
 }
-
-#wrapper p.change_link a {
-    color: #fff;
-    font-size: 17px;
+.login-agileits-bottom {
+    margin-top: 0.8em;
 }
-
-#wrapper p.change_link a:hover {
-    color: #E91E63;
+.login-form h2 {
+    font-size: 1.2em; 
 }
-
-/*--小贝壳网站模板--*/
-/*--agileits--*/
-#register, #login{
-    position: absolute;
-    padding: 64px;
-    background: #272727;
+.login-form {
+    padding: 0 3em;
 }
-
-#register{  
-   padding: 47px;
+.copyright p {
+    font-size: 0.8em; 
 }
-
-#toregister:target ~ #wrapper #register, #tologin:target ~ #wrapper #login{
-    -webkit-animation-name: fadeInLeft;
-    -moz-animation-name: fadeInLeft;
-    -ms-animation-name: fadeInLeft;
-    -o-animation-name: fadeInLeft;
-    animation-name: fadeInLeft;
-    -webkit-animation-delay: .1s;
-    -moz-animation-delay: .1s;
-    -o-animation-delay: .1s;
-    -ms-animation-delay: .1s;
-    animation-delay: .1s;
 }
-
-#toregister:target ~ #wrapper #login, #tologin:target ~ #wrapper #register{
-    -webkit-animation-name: fadeOutLeftBig;
-    -moz-animation-name: fadeOutLeftBig;
-    -ms-animation-name: fadeOutLeftBig;
-    -o-animation-name: fadeOutLeftBig;
-    animation-name: fadeOutLeftBig;
-}
-
-.animate{
-    -webkit-animation-duration: 1s;
-    -webkit-animation-timing-function: ease;
-    -webkit-animation-fill-mode: both;    
-    -moz-animation-duration: 1s;
-    -moz-animation-timing-function: ease;
-    -moz-animation-fill-mode: both;    
-    -o-animation-duration: 1s;
-    -o-animation-timing-function: ease;
-    -o-animation-fill-mode: both;    
-    -ms-animation-duration: 1s;
-    -ms-animation-timing-function: ease;
-    -ms-animation-fill-mode: both;    
-    animation-duration: 1s;
-    animation-timing-function: ease;
-    animation-fill-mode: both;
-}
-/*--小贝壳网站模板--*/
-/*--agileits--*/
-.send-button input[type="submit"] {
-    float: right;
-    background-color: #6641dc;
-    padding: 15px 40px;
-    border: none;
-    outline: none;
-    border-radius: 3px;
-    font-size: 15px;
-    color: #FFF;
-    font-family: 'Montserrat', sans-serif;
-    cursor: pointer;
-}
-
-.social-icons {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.social-icons p {
-    color: #CCC;
-    font-size: 12px;
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 15px;
-}
-
-.social-icons ul li {
-    float: left;
-    width: 35%;
-}
-
-li.fb.w3ls {
-    background-color: #43619f;
-    margin-left: 65px;
-}
-
-li.twt.w3ls {
-    background-color: #00abf0;
-}
-
-.social-icons ul li a {
-    display: block;
-    padding: 7px 0;
-}
-
-.social-icons ul li a span {
-    vertical-align: middle;
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    /*--小贝壳网站模板--*/
-    /*--agileits--*/
-    font-size: 15px;
-}
-
-.social-icons ul li span.icons {
-    background: url("../images/i1.png") no-repeat center;
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    margin-left: -15px;
-    margin-right: 5px;
-}
-
-.social-icons ul li.twt span.icons {
-    background: url("../images/i2.png") no-repeat center;
-}
-
-.social-icons ul li a:hover span.icons {
-    transform: rotatey(360deg);
-    -webkit-transform: rotatey(360deg);
-    -o-transform: rotatey(360deg);
-    -moz-transform: rotatey(360deg);
-    -ms-transform: rotatey(360deg);
-    transition: .5s all;
-}
-
-#register p.change_link {
-    margin: 0;
-    margin-top: 15px;
-}
-
-#wrapper input[type="text"].name {
-    background: url("../images/name.png") no-repeat 13px 13px;
-}
-
-#wrapper input[type="text"].phone {
-    background: url("../images/phone.png") no-repeat 13px 13px;
-}
-
-.footer {
-    text-align: center;
-    margin: 50px 20px 20px;
-}
-
-.footer p {
-    color: #CCC;
-    line-height: 25px;
-}
-
-/*--小贝壳网站模板--*/
-/*--agileits--*/
-.footer a {
-    color: #CCC;
-    text-decoration: none;
-}
-
-.footer a:hover {
-    color: #FFF;
-}
-
-/*-- Index-Page-Styling --*/
-
-
-
-
-
-
-
-
-
-/*--- Responsive Code ---*/
-
-
-
-@media screen and (max-width: 1920px) {
-    h1 {
-        margin: 100px 0;
-    }
-    .container {
-        width: 62%;
-    }
-    #register {
-        padding: 47px 47px 48px;
-    }
-    div#login {
-        padding: 64px 64px 65px;
-    }
-}
-
-@media screen and (max-width: 1600px) {
-    h1 {
-        margin: 50px 0;
-    }
-    .container {
-        width: 75%;
-    }
-    div#register {
-        padding: 47px;
-    }
-    /*--小贝壳网站模板--*/
-    /*--agileits--*/
-    div#login {
-        padding: 64px;
-    }
-}
-
-@media screen and (max-width: 1440px) {
-    .container {
-        width: 82.5%;
-    }
-}
-
-@media screen and (max-width: 1366px) {
-    .container {
-        width: 88%;
-    }
-}
-
-@media screen and (max-width: 1280px) {
-    div#login {
-        padding: 45px;
-    }
-    div#register {
-        padding: 28px;
-    }
-    #wrapper input[type="text"], #wrapper input[type="password"] {
-        width: 90%;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    h1 {
-        margin: 35px 0;
-        font-size: 40px;
-    }
-    .container {
-        width: 95%;
-    }
-    .content-left p {
-        left: 53%;
-        -ms-transform: translate(-52%, -40%);
-        transform: translate(-52%, -40%);
-        width: 82%;
-    }
-    .content-left a.more {
-        top: 65%;
-        left: 20.7%;
-        -ms-transform: translate(-24%, -60%);
-        transform: translate(-24%, -60%);
-        /*--小贝壳网站模板--*/
-        /*--agileits--*/
-    }
-    div#login {
-        padding: 34px;
-    }
-    div#register {
-        padding: 36px;
-    }
-    #wrapper h2 {
-        margin-bottom: 20px;
-    }
-    #wrapper label {
-        font-size: 13px;
-    }
-    #wrapper input[type="text"], #wrapper input[type="password"] {
-        width: 89%;
-        margin: 5px 0 10px;
-        padding: 8px 5px 8px 40px;
-    }
-    #wrapper input[type="text"].name {
-        background: url("../images/name.png") no-repeat 13px 10px;
-    }
-    #wrapper input[type="text"].phone {
-        background: url("../images/phone.png") no-repeat 13px 10px;
-    }
-    #wrapper input[type="text"] {
-        background: url("../images/mail.png") no-repeat 13px 10px;
-    }
-    #wrapper input[type="password"] {
-        background: url("../images/password.png") no-repeat 13px 10px;
-    }
-}
-
-@media screen and (max-width: 966px) {
-    div#login {
-        padding: 23px;
-    }
-    div#register {
-        padding: 25px;
-    }
-    #wrapper h2 {
-        font-size: 25px;
-        margin-bottom: 14px;
-    }
-    .content-left p {
-        font-size: 28px;
-    }
-}
-
-/*--小贝壳网站模板--*/
-/*--agileits--*/
-@media screen and (max-width: 900px) {
-    .content-left img {
-        width: 107.5%;
-    }
-    .content-left p {
-        font-size: 26px;
-        line-height: 40px;
-    }
-    .list {
-        width: 100%;
-        left: 61%;
-        bottom: 7%;
-    }
-}
-
-@media screen and (max-width: 853px) {
-    .container {
-        width: 65%;
-        padding-bottom: 500px;
-    }
-    .content-left, .content-right {
-        width: 100%;
-    }
-    .content-left img {
-        width: 100%;
-        height: 450px;
-    }
-    #wrapper {
-        margin-top: -5px;
-    }
-    div#login {
-        padding: 50px;
-    }
-    div#register {
-        padding: 50px;
-    }
-    .content-left a.more {
-        left: 19%;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .container {
-        width: 70%;
-    }
-}
-
-@media screen and (max-width: 736px) {
-    /*--小贝壳网站模板--*/
-    /*--agileits--*/
-    .container {
-        width: 75%;
-    }
-}
-
-@media screen and (max-width: 667px) {
-    .content-left p {
-        font-size: 25px;
-        line-height: 35px;
-    }
-}
-
-@media screen and (max-width: 640px) {
-    h1 {
-        font-size: 38px;
-    }
-}
-
-@media screen and (max-width: 603px) {
-    h1 {
-        font-size: 35px;
-    }
-    .container {
-        width: 80%;
-    }
-}
-
-@media screen and (max-width: 568px) {
-    h1 {
-        font-size: 34px;
-    }
-    div#register {
-        padding: 45px;
-    }
-}
-
-@media screen and (max-width: 533px) {
-    h1 {
-        font-size: 32px;
-    }
-    .content-left img {
-        height: 400px;
-    }
-    .social-icons ul li {
-        width: 40%;
-    }
-    li.fb.w3ls {
-        margin-left: 30px;
-        /*--小贝壳网站模板--*/
-        /*--agileits--*/
-    }
-    #register p.change_link {
-        margin-top: 0;
-        line-height: 30px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    h1 {
-        font-size: 29px;
-    }
-    .content-left p {
-        font-size: 23px;
-    }
-    .content-left a.more {
-        left: 22%;
-        padding: 10px 30px;
-    }
-    div#register {
-        padding: 30px;
-    }
-    #wrapper input[type="text"], #wrapper input[type="password"] {
-        width: 85%;
-    }
-    #register p.change_link {
-        line-height: 25px;
-    }
-    div#login {
-        padding: 40px;
-    }
-}
-
-@media screen and (max-width: 414px) {
-    h1 {
-        font-size: 25px;
-    }
-    .container {
-        width: 95%;
-    }
-    .list {
-        width: 83%;
-        left: 56%;
-    }
-}
-
-@media screen and (max-width: 384px) {
-    h1 {
-        font-size: 27px;
-        /*--小贝壳网站模板--*/
-        /*--agileits--*/
-        line-height: 35px;
-    }
-    .content-left p {
-        font-size: 21px;
-    }
-    div#register {
-        padding: 40px 30px;
-    }
-    .send-button input[type="submit"] {
-        padding: 10px 35px;
-        margin-top: 8px;
-    }
-    .social-icons ul li {
-        width: 45%;
-    }
-    li.fb.w3ls {
-        margin-left: 10px;
-    }
-    .social-icons ul li a {
-        padding: 5px 0;
-    }
-    #register p.change_link {
-        margin-top: 5px;
-    }
-}
-
-@media screen and (max-width: 360px) {
-    .content-left p {
-        font-size: 20px;
-    }
-    .list {
-        left: 51%;
-    }
-    #register p.change_link {
-        margin-top: 70px;
-    }
-    #wrapper input[type="text"], #wrapper input[type="password"] {
-        width: 82%;
-    }
-    .send-button a {
-        width: 100%;
-        padding-top: 5px;
-        padding-bottom: 10px;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    h1 {
-        /*--小贝壳网站模板--*/
-        /*--agileits--*/
-        font-size: 25px;
-        line-height: 32px;
-        margin: 25px 0;
-    }
-    .content-left p {
-        font-size: 18px;
-        line-height: 30px;
-    }
-    .content-left img {
-        height: 325px;
-    }
-    .content-left a.more {
-        left: 24%;
-        font-size: 14px;
-    }
-    .list {
-        width: 93%;
-    }
-    div#register {
-        padding: 20px;
-    }
-    div#login {
-        padding: 20px;
-    }
-    .social-icons ul li {
-        width: 50%;
-    }
-    li.fb.w3ls {
-        margin-left: 0;
-    }
-    .social-icons ul li a span {
-        font-size: 13px;
-    }
-    .social-icons ul li a {
-        padding: 3px 0;
-    }
-    .footer p {
-        font-size: 14px;
-    }
-}
-
-
-
-/*--- Responsive Code ---*/
+/*-- //responsive-design --*/

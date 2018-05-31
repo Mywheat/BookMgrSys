@@ -1,4 +1,4 @@
-package cn.edu.lingnan.dao;
+ package cn.edu.lingnan.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -73,7 +73,34 @@ public class libraryDAO {
     return supervalue;	    				
 	}
 
-			
+
+//登录时判断该用户名是否存在
+	public boolean FindReaderByRname(String rname)
+	{
+		boolean flag = false;
+		Connection conn = null;
+		PreparedStatement prep = null;
+		ResultSet rs = null;
+		try {
+			conn = DataAccess2.getConnection();
+			prep = conn.prepareStatement
+					("select * from reader where rname = ? ");
+			prep.setString(1, rname);
+			rs = prep.executeQuery();
+			if(rs.next())
+			{
+				flag = true;
+			}		
+		} catch (SQLException e) {
+			System.out.println("运行sql语句时出现错误");
+			e.printStackTrace();
+		}finally{
+			DataAccess2.CloseConnection1(rs,prep,conn);	
+		}
+    return flag;	    				
+	}
+	
+	
 //往读者表插入数据（用户注册）
 	public static boolean InsertRegister(SelectDTO sdto){
 		boolean flag = false;

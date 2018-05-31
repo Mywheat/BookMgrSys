@@ -12,7 +12,6 @@ import cn.edu.lingnan.dto.SelectDTO;
 
 public class RegisterServlet extends HttpServlet {
 
-	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 		throws ServletException, IOException {
 	    //所有从页面register.html传过来的参数都在req里面
