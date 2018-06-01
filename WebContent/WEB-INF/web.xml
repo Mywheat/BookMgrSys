@@ -145,4 +145,14 @@
 		<url-pattern>/rnameCheckServlet</url-pattern>
 	</servlet-mapping>
 	
+	<!-- 2018.06.01 FindAllBook -->
+	<servlet>
+		<servlet-name>FindAllBook</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.FindAllBook</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindAllBook</servlet-name>
+		<url-pattern>/Admin/findAllBook</url-pattern>
+	</servlet-mapping>
+	
 </web-app>

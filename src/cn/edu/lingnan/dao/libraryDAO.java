@@ -186,6 +186,38 @@ public class libraryDAO {
 			}
 	return v;
     }	
+
 	
+
+//查找书籍基本信息	（显示书籍全部信息）
+	public Vector<SelectDTO> FindAllBookIfo() {	
+		Vector<SelectDTO> v = new Vector<SelectDTO>();
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		try {
+			conn = DataAccess2.getConnection();
+			stmt = conn.createStatement();    //创建sql语句对象
+			rs = stmt.executeQuery("select * from book where status = 0");   //执行sql语句，并将查询结果返回给ResultSet对象
+			while(rs.next())
+			{
+				SelectDTO r = new SelectDTO();
+				r.setNumber(rs.getString("number"));
+				r.setBname(rs.getString("bname"));
+				r.setAuthor(rs.getString("author"));
+				r.setBookpub(rs.getString("bookpub"));
+				r.setBookpubdate(rs.getString("bookpubdate"));
+				r.setBooklend(rs.getString("booklend"));
+				r.setStatus(rs.getInt("status"));
+				v.add(r);
+			}
+		} catch (SQLException e) {
+			System.out.println("运行sql语句时出现错误");
+			e.printStackTrace();
+		}finally{
+			DataAccess2.CloseConnection2(rs, stmt, conn);	
+		}
+    return v;	    
+	}
 	
 }

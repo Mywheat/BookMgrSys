@@ -3,11 +3,17 @@ package cn.edu.lingnan.dto;
 public class SelectDTO {
 	private String rno;
 	private String rname;
-	private int status;
-	private String ISBN;
-	private String bname;
-	private int superuser;
 	private String password;
+	private int superuser;
+	private int status;
+	private String number;
+	private String bname;
+	private String author;
+	private String bookpub;
+	private String bookpubdate;
+	private String booklend;
+	
+	
 
 	public String getRno() {
 		return rno;
@@ -24,6 +30,14 @@ public class SelectDTO {
 	public void setRname(String rname) {
 		this.rname = rname;
 	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	public int getSuperuser() {
 		return superuser;
@@ -32,23 +46,7 @@ public class SelectDTO {
 	public void setSuperuser(int superuser) {
 		this.superuser = superuser;
 	}
-
-	public String getBname() {
-		return bname;
-	}
-
-	public void setBname(String bname) {
-		this.bname = bname;
-	}
-
-	public String getISBN() {
-		return ISBN;
-	}
-
-	public void setISBN(String iSBN) {
-		ISBN = iSBN;
-	}
-
+	
 	public int getStatus() {
 		return status;
 	}
@@ -57,12 +55,57 @@ public class SelectDTO {
 		this.status = status;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getNumber() {
+		return number;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setNumber(String number) {
+		this.number = number;
 	}
+	
+	public String getBname() {
+		return bname;
+	}
+
+	public void setBname(String bname) {
+		this.bname = bname;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public String getBookpub() {
+		return bookpub;
+	}
+
+	public void setBookpub(String bookpub) {
+		this.bookpub = bookpub;
+	}
+
+	public String getBookpubdate() {
+		return bookpubdate;
+	}
+
+	public void setBookpubdate(String bookpubdate) {
+		this.bookpubdate = bookpubdate;
+	}
+
+	public String getBooklend() {
+		return booklend;
+	}
+
+	public void setBooklend(String book_lend) {
+		this.booklend = book_lend;
+	}
+
+
+	
+
+	
 
 }
