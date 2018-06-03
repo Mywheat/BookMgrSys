@@ -13,6 +13,53 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="format-detection" content="telephone=no">
 <link rel="stylesheet" href="./css1/x-admin.css" media="all">
+
+<script>
+	function allcheck() {
+		var checkObj = document.getElementsByName("check");//找出所有名为"check"的复选框
+		for (var i = 0; i < checkObj.length; i++)
+			checkObj[i].checked = true; //让复选框中的被选中的值为true
+	}
+
+	function nocheck() {
+		var checkObj = document.getElementsByName("check");
+		for (var i = 0; i < checkObj.length; i++)
+			checkObj[i].checked = false; //让复选框中的被选中的值为false
+	}
+
+	function backcheck() {
+		var checkObj = document.getElementsByName("check");
+		for (var i = 0; i < checkObj.length; i++)
+			if (checkObj[i].checked)
+				checkObj[i].checked = false;
+			else
+				checkObj[i].checked = true;
+
+	}
+
+	function allDelete() {
+		var checkObj = document.getElementsByName("check");
+		var arr = []; //定义arr数组
+		var flag = false;
+		for (var i = 0; i < checkObj.length; i++) {
+			if (checkObj[i].checked == true) {
+				arr.push(checkObj[i].value);
+				flag = true;
+			}
+		}
+		alert(arr);
+		if (flag) {
+			if (confirm("你确定要删除这些记录吗?"))
+				location.href = "deleteBookCheckServlet?arr=" + arr; //调用servlet			
+		} else
+			alert("至少要选择一条记录才能进行批量删除...");
+	}
+	
+	function insert() {
+		location.href = "insertBookIfo.jsp";
+	}
+</script>
+
 </head>
 <body>
 	<div class="x-body">
@@ -50,11 +97,37 @@
 					<td><%=sdto.getBookpubdate()%></td>
 					<td><%=sdto.getBooklend()%></td>
 					<td><%=sdto.getStatus()%></td>
+					<td><a href="updateBookIfo.jsp?number=<%=sdto.getNumber()%>">
+							<input type="button" value="修改">
+					</a> <a href="deleteBookServlet?number=<%=sdto.getNumber()%>"><input
+							type="button" value="删除"></a></td>
 				</tr>
 			</tbody>
 			<%
 				}
 			%>
 		</table>
+		<button class="layui-btn layui-btn-danger" id="btn1"
+			onClick="allcheck();">
+			<i class="layui-icon"></i>全选
+		</button>
+		<button class="layui-btn layui-btn-danger" id="btn2"
+			onClick="nocheck();">
+			<i class="layui-icon"></i>不选
+		</button>
+		<button class="layui-btn layui-btn-danger" id="btn3"
+			onClick="backcheck();">
+			<i class="layui-icon"></i>反选
+		</button>
+		<button class="layui-btn layui-btn-danger" onClick="insert();">
+			<i class="layui-icon"></i>添加
+		</button>
+		<button class="layui-btn layui-btn-danger" onClick="allDelete();">
+			<i class="layui-icon">&#xe640;</i>批量删除
+		</button>
+
+		<a href="admin.html" class="layui-btn layui-btn-danger">返回上页</a>
+
+	</div>
 </body>
 </html>

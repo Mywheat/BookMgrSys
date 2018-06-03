@@ -125,14 +125,14 @@
 	</taglib>
 	</jsp-config>
 	
-	<!-- 2018.05.28 DeleteCheckServlet 批量删除用户信息-->
+	<!-- 2018.05.28 DeleteReaderCheckServlet 批量删除用户信息-->
 	<servlet>
-		<servlet-name>DeleteCheckServlet</servlet-name>
-		<servlet-class>cn.edu.lingnan.Servlet.DeleteCheckServlet</servlet-class>
+		<servlet-name>DeleteReaderCheckServlet</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.DeleteReaderCheckServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>DeleteCheckServlet</servlet-name>
-		<url-pattern>/Admin/deleteCheckServlet</url-pattern>
+		<servlet-name>DeleteReaderCheckServlet</servlet-name>
+		<url-pattern>/Admin/deleteReaderCheckServlet</url-pattern>
 	</servlet-mapping>
 	
 	<!-- 2018.05.30 RnameCheckServlet Ajax判断用户名是否已经注册-->
@@ -153,6 +153,56 @@
 	<servlet-mapping>
 		<servlet-name>FindAllBook</servlet-name>
 		<url-pattern>/Admin/findAllBook</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.06.02 UpdateBookServlet -->
+	<servlet>
+		<servlet-name>UpdateBookServlet</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.UpdateBookServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateBookServlet</servlet-name>
+		<url-pattern>/Admin/updateBookServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.06.03 DeleteBookServlet 删除书籍信息-->
+	<servlet>
+		<servlet-name>DeleteBookServlet</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.DeleteBookServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteBookServlet</servlet-name>
+		<url-pattern>/Admin/deleteBookServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.06.03 DeleteBookCheckServlet 批量删除书籍信息-->
+	<servlet>
+		<servlet-name>DeleteBookCheckServlet</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.DeleteBookCheckServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteBookCheckServlet</servlet-name>
+		<url-pattern>/Admin/deleteBookCheckServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.06.03 InsertBookServlet 添加书籍信息-->
+	<servlet>
+		<servlet-name>InsertBookServlet</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.InsertBookServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InsertBookServlet</servlet-name>
+		<url-pattern>/Admin/insertBookServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.06.03 InsertReaderServlet 添加用户信息-->
+	<servlet>
+		<servlet-name>InsertReaderServlet</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.InsertReaderServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InsertReaderServlet</servlet-name>
+		<url-pattern>/Admin/insertReaderServlet</url-pattern>
 	</servlet-mapping>
 	
 </web-app>

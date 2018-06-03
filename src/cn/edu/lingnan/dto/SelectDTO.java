@@ -5,13 +5,13 @@ public class SelectDTO {
 	private String rname;
 	private String password;
 	private int superuser;
-	private int status;
 	private String number;
 	private String bname;
 	private String author;
 	private String bookpub;
 	private String bookpubdate;
 	private String booklend;
+	private int status;
 	
 	
 
@@ -47,14 +47,6 @@ public class SelectDTO {
 		this.superuser = superuser;
 	}
 	
-	public int getStatus() {
-		return status;
-	}
-
-	public void setStatus(int status) {
-		this.status = status;
-	}
-
 	public String getNumber() {
 		return number;
 	}
@@ -103,8 +95,14 @@ public class SelectDTO {
 		this.booklend = book_lend;
 	}
 
+	public int getStatus() {
+		return status;
+	}
 
-	
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
 
 	
 

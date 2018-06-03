@@ -50,10 +50,14 @@
 		alert(arr);
 		if (flag) {
 			if (confirm("你确定要删除这些记录吗?"))
-				location.href = "deleteCheckServlet?arr=" + arr; //调用servlet			
+				location.href = "deleteReaderCheckServlet?arr=" + arr; //调用servlet			
 		} else
 			alert("至少要选择一条记录才能进行批量删除...");
 
+	}
+	
+	function insert(){
+		location.href = "insertReaderIfo.jsp";
 	}
 	
 </script>
@@ -115,6 +119,9 @@
 		<button class="layui-btn layui-btn-danger" id="btn3"
 			onClick="backcheck();">
 			<i class="layui-icon"></i>反选
+		</button>
+		<button class="layui-btn layui-btn-danger" onClick="insert();">
+			<i class="layui-icon"></i>添加
 		</button>
 		<button class="layui-btn layui-btn-danger" onClick="allDelete();">
 			<i class="layui-icon">&#xe640;</i>批量删除
