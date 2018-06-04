@@ -301,4 +301,134 @@ public class libraryDAO {
 		return flag;
 	}
 
+	// 查找借阅记录 （显示借阅记录全部信息）
+	public Vector<SelectDTO> FindLend_return() {
+		Vector<SelectDTO> v = new Vector<SelectDTO>();
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		try {
+			conn = DataAccess2.getConnection();
+			stmt = conn.createStatement(); // 创建sql语句对象
+			rs = stmt
+					.executeQuery("select * from lend_return where status = 0"); // 执行sql语句，并将查询结果返回给ResultSet对象
+			while (rs.next()) {
+				SelectDTO r = new SelectDTO();
+				r.setRno(rs.getString("rno"));
+				r.setNumber(rs.getString("number"));
+				r.setLendDate(rs.getString("lendDate"));
+				r.setReturnDate(rs.getString("returnDate"));
+				r.setStatus(rs.getInt("status"));
+				v.add(r);
+			}
+		} catch (SQLException e) {
+			System.out.println("运行sql语句时出现错误");
+			e.printStackTrace();
+		} finally {
+			DataAccess2.CloseConnection2(rs, stmt, conn);
+		}
+		return v;
+	}
+
+	// 更新借阅记录（修改借阅记录）
+	public static boolean UpdateLend_return(SelectDTO sdto) {
+		boolean flag = false;
+		String rno = sdto.getRno();
+		String number = sdto.getNumber();
+		String lendDate = sdto.getLendDate();
+		String returnDate = sdto.getReturnDate();
+		int status = sdto.getStatus();
+		String sql = "update lend_return set returnDate='" + returnDate
+				+ "',status='" + status + "' where rno='" + rno
+				+ "' and number='" + number + "' and lendDate='" + lendDate
+				+ "'";
+		Connection conn = null;
+		Statement stat = null;
+		try {
+			conn = DataAccess2.getConnection();
+			stat = conn.createStatement();
+			stat.executeUpdate(sql);
+			flag = true;
+		} catch (SQLException e) {
+			System.out.println("运行sql语句时出现错误");
+			e.printStackTrace();
+		} finally {
+			DataAccess2.CloseConnection3(stat, conn);
+		}
+		return flag;
+	}
+
+	// 软删除借阅记录
+	public Vector<SelectDTO> DeleteLend_return(String rno, String number,
+			String lendDate) {
+		Vector<SelectDTO> v = new Vector<SelectDTO>();
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		try {
+			conn = DataAccess2.getConnection();
+			stmt = conn.createStatement();
+			String sql = " update lend_return set status = 1 where rno = '"
+					+ rno + "' and number = '" + number + "' and lendDate = '"
+					+ lendDate + "' ";
+			stmt.executeUpdate(sql);
+			String sql1 = "select * from lend_return where status = 0";
+			rs = stmt.executeQuery(sql1);
+			while (rs.next()) {
+				SelectDTO r = new SelectDTO();
+				r.setRno(rs.getString("rno"));
+				r.setNumber(rs.getString("number"));
+				r.setLendDate(rs.getString("lendDate"));
+				r.setReturnDate(rs.getString("returnDate"));
+				r.setStatus(rs.getInt("status"));
+				v.add(r);
+			}
+		} catch (SQLException e) {
+			System.out.println("运行sql语句时出现错误");
+			e.printStackTrace();
+		} finally {
+			DataAccess2.CloseConnection3(stmt, conn);
+		}
+		return v;
+	}
+
+	// 插入借阅记录
+	public static boolean InsertLend_return(SelectDTO sdto) {
+		boolean flag = false;
+		String a = null;
+		String rno = sdto.getRno();
+		String number = sdto.getNumber();
+		String lendDate = sdto.getLendDate();
+		String returnDate = sdto.getReturnDate();
+		int status = sdto.getStatus();
+		Connection conn = null;
+		Statement stat = null;
+		ResultSet rs = null;
+		try {
+			conn = DataAccess2.getConnection();
+			stat = conn.createStatement();
+			String sql = "select booklend from book where number = '" + number + "'";
+			rs = stat.executeQuery(sql);
+			while(rs.next()){
+				a = rs.getString("booklend");
+				System.out.println(a);
+			}
+			if (a.equalsIgnoreCase("Y")) {
+				String sql1 = "insert into lend_return values" + "('" + rno
+						+ "','" + number + "','" + lendDate + "','"
+						+ returnDate + "','" + status + "')";
+				stat.executeUpdate(sql1);
+				flag = true;
+			}else if(a.equalsIgnoreCase("N")){
+				flag = false;
+			}
+		} catch (SQLException e) {
+			System.out.println("运行sql语句时出现错误");
+			e.printStackTrace();
+		} finally {
+			DataAccess2.CloseConnection3(stat, conn);
+		}
+		return flag;
+	}
+
 }

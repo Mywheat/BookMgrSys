@@ -205,4 +205,44 @@
 		<url-pattern>/Admin/insertReaderServlet</url-pattern>
 	</servlet-mapping>
 	
+	<!-- 2018.06.03 FindLend_return -->
+	<servlet>
+		<servlet-name>FindLend_return</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.FindLend_return</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindLend_return</servlet-name>
+		<url-pattern>/Admin/findLend_return</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.06.03 UpdateLend_returnServlet -->
+	<servlet>
+		<servlet-name>UpdateLend_returnServlet</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.UpdateLend_returnServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateLend_returnServlet</servlet-name>
+		<url-pattern>/Admin/updateLend_returnServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.06.03 DeleteLend_returnServlet -->
+	<servlet>
+		<servlet-name>DeleteLend_returnServlet</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.DeleteLend_returnServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteLend_returnServlet</servlet-name>
+		<url-pattern>/Admin/deleteLend_returnServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.06.04 InsertLend_returnServlet -->
+	<servlet>
+		<servlet-name>InsertLend_returnServlet</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.InsertLend_returnServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InsertLend_returnServlet</servlet-name>
+		<url-pattern>/Admin/insertLend_returnServlet</url-pattern>
+	</servlet-mapping>
+	
 </web-app>

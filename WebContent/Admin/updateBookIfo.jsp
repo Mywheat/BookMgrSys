@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=GB2312">
-<title>修改读者信息的页面</title>
+<title>修改书籍信息的页面</title>
+<link rel="stylesheet" href="./css1/x-admin.css" media="all">
 </head>
 <body>
 	<form action="updateBookServlet">
@@ -36,21 +37,21 @@
 				<tbody>
 					<tr>
 						<!-- 不允许rno修改 -->
-						<td><input type="text" readOnly="true" name="number"
+						<td><input style="width: 125px" type="text" readOnly="true" name="number"
 							value=<%=sdto.getNumber()%>></td>
-						<td><input type="text" name="bname"
+						<td><input style="width: 125px" type="text" name="bname"
 							value=<%=sdto.getBname()%>></td>
-						<td><input type="text" name="author"
+						<td><input style="width: 125px" type="text" name="author"
 							value=<%=sdto.getAuthor()%>></td>
-						<td><input type="text" name="bookpub"
+						<td><input style="width: 125px" type="text" name="bookpub"
 							value=<%=sdto.getBookpub()%>></td>
-						<td><input type="text" name="bookpubdate"
+						<td><input style="width: 125px" type="text" name="bookpubdate"
 							value=<%=sdto.getBookpubdate()%>></td>
-						<td><input type="text" name="booklend"
+						<td><input style="width: 125px" type="text" name="booklend"
 							value=<%=sdto.getBooklend()%>></td>
-						<td><input type="text" name="status"
+						<td><input style="width: 125px" type="text" name="status"
 							value=<%=sdto.getStatus()%>></td>
-						<td><input type="submit" value="确认修改"></td>
+						<td><input style="width: 125px" type="submit" value="确认修改"></td>
 					</tr>
 				</tbody>
 				<%

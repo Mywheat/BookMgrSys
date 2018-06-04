@@ -11,6 +11,8 @@ public class SelectDTO {
 	private String bookpub;
 	private String bookpubdate;
 	private String booklend;
+	private String lendDate;
+	private String returnDate;
 	private int status;
 	
 	
@@ -101,6 +103,22 @@ public class SelectDTO {
 
 	public void setStatus(int status) {
 		this.status = status;
+	}
+
+	public String getLendDate() {
+		return lendDate;
+	}
+
+	public void setLendDate(String lendDate) {
+		this.lendDate = lendDate;
+	}
+
+	public String getReturnDate() {
+		return returnDate;
+	}
+
+	public void setReturnDate(String returnDate) {
+		this.returnDate = returnDate;
 	}
 
 
