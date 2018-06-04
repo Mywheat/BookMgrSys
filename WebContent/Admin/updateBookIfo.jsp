@@ -47,7 +47,7 @@
 							value=<%=sdto.getBookpub()%>></td>
 						<td><input style="width: 125px" type="text" name="bookpubdate"
 							value=<%=sdto.getBookpubdate()%>></td>
-						<td><input style="width: 125px" type="text" name="booklend"
+						<td><input style="width: 125px" type="text" readOnly="true" name="booklend"
 							value=<%=sdto.getBooklend()%>></td>
 						<td><input style="width: 125px" type="text" name="status"
 							value=<%=sdto.getStatus()%>></td>

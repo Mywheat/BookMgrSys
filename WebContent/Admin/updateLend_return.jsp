@@ -42,7 +42,7 @@
 							value=<%=sdto.getRno()%>></td>
 						<td><input type="text" readOnly="true" name="number"
 							value=<%=sdto.getNumber()%>></td>
-						<td><input type="text" readOnly="true" name="lendDate"
+						<td><input type="text" name="lendDate"
 							value=<%=sdto.getLendDate()%>></td>
 						<td><input type="text" name="returnDate"
 							value=<%=sdto.getReturnDate()%>></td>
