@@ -26,7 +26,7 @@ public class LoginServlet extends HttpServlet {
 		//2.调用后台的业务逻辑判断用户名和密码是否存在且与之相对应
 		libraryDAO l = new libraryDAO();
 		int supervalue = l.FindReaderByUsernameAndPassword(rname, password);
-//		System.out.println("检测2------"+supervalue);
+		System.out.println("检测2------"+supervalue);
 		HttpSession session = req.getSession();
 		session.setAttribute("supervalue1", supervalue);	
 		//3.根据结果找到相应的页面

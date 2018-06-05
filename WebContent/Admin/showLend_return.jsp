@@ -50,7 +50,7 @@
 		alert(arr);
 		if (flag) {
 			if (confirm("你确定要删除这些记录吗?"))
-				location.href = "deleteBookCheckServlet?arr=" + arr; //调用servlet			
+				location.href = "deleteLend_returnCheckServlet?arr=" + arr; //调用servlet			
 		} else
 			alert("至少要选择一条记录才能进行批量删除...");
 	}
@@ -87,7 +87,7 @@
 			<tbody>
 				<tr>
 					<td><input type="checkbox" name="check"
-						value=<%=sdto.getRno()%>></td>
+						value=<%=sdto.getRno()%>,<%=sdto.getNumber()%>,<%=sdto.getLendDate()%>></td>
 					<td><%=sdto.getRno()%></td>
 					<td><%=sdto.getNumber()%></td>
 					<td><%=sdto.getLendDate()%></td>
@@ -96,7 +96,8 @@
 					<td><a
 						href="updateLend_return.jsp?rno=<%=sdto.getRno()%>&&number=<%=sdto.getNumber()%>&&lendDate=<%=sdto.getLendDate()%>">
 							<input type="button" value="修改">
-					</a> <a href="deleteLend_returnServlet?rno=<%=sdto.getRno()%>&&number=<%=sdto.getNumber()%>&&lendDate=<%=sdto.getLendDate()%>"><input
+					</a> <a
+						href="deleteLend_returnServlet?rno=<%=sdto.getRno()%>&&number=<%=sdto.getNumber()%>&&lendDate=<%=sdto.getLendDate()%>"><input
 							type="button" value="删除"></a></td>
 				</tr>
 			</tbody>

@@ -56,9 +56,9 @@ public class libraryDAO {
 			prep.setString(1, rname);
 			prep.setString(2, password);
 			rs = prep.executeQuery();
-			if (rs.next()) {
+			while(rs.next()) {
 				supervalue = rs.getInt("superuser");
-				// System.out.println("检测1-------"+supervalue);
+				//System.out.println("检测1-------"+supervalue);
 			}
 		} catch (SQLException e) {
 			System.out.println("运行sql语句时出现错误");
@@ -398,6 +398,88 @@ public class libraryDAO {
 		return flag;
 	}
 
+	// 插入借阅记录
+	public static boolean InsertLend_return(SelectDTO sdto) {
+		boolean flag = false;
+		String a = null;
+		String b = null;
+		String c = null;
+		String d = null;
+		String rno = sdto.getRno();
+		String number = sdto.getNumber();
+		String lendDate = sdto.getLendDate();
+		String returnDate = sdto.getReturnDate();
+		int status = sdto.getStatus();
+		Connection conn = null;
+		Statement stat = null;
+		Statement stat1 = null;
+		Statement stat2 = null;
+		Statement stat3 = null;
+		Statement stat4 = null;
+		Statement stat5 = null;
+		ResultSet rs = null;
+		ResultSet rs1 = null;
+		try {
+			conn = DataAccess2.getConnection();
+			stat = conn.createStatement();
+			stat1 = conn.createStatement();
+			stat2 = conn.createStatement();
+			stat3 = conn.createStatement();
+			stat4 = conn.createStatement();
+			stat5 = conn.createStatement();
+			String sql = "select * from book where number = '" + number + "'";
+			rs = stat.executeQuery(sql);
+			while (rs.next()) {
+				a = rs.getString("booklend");
+				System.out.println(a);
+				if (a.equalsIgnoreCase("Y")) {
+					String sql1 = "insert into lend_return values" + "('" + rno
+							+ "','" + number + "','" + lendDate + "','"
+							+ returnDate + "','" + status + "')";
+					stat1.executeUpdate(sql1);
+
+					String sql2 = "select * from lend_return where rno='" + rno
+							+ "' and number='" + number + "' and lendDate='"
+							+ lendDate + "'";
+					rs1 = stat2.executeQuery(sql2);
+					while (rs1.next()) {
+						b = rs1.getString("lendDate");
+						c = rs1.getString("returnDate");
+						d = rs1.getString("number");
+						System.out.println(b);
+						System.out.println(c);
+						System.out.println(d);
+						if (!b.equalsIgnoreCase("null")) {
+							if (c.equalsIgnoreCase("null")) {
+								String sql3 = "update book set booklend = 'N' where number = '"
+										+ d + "' ";
+								stat3.executeUpdate(sql3);
+							} else {
+								String sql4 = "update book set booklend = 'Y' where number = '"
+										+ d + "' ";
+								stat4.executeUpdate(sql4);
+							}
+
+						} else {
+							String sql5 = "update book set booklend = 'Y' where number = '"
+									+ d + "' ";
+							stat5.executeUpdate(sql5);
+						}
+					}
+					flag = true;
+				} else if (a.equalsIgnoreCase("N")) {
+					flag = false;
+				}
+			}
+		} catch (SQLException e) {
+			System.out.println("运行sql语句时出现错误");
+			e.printStackTrace();
+		} finally {
+			DataAccess2.CloseConnection3(stat, conn);
+		}
+		return flag;
+	}
+
 	// 软删除借阅记录
 	public Vector<SelectDTO> DeleteLend_return(String rno, String number,
 			String lendDate) {
@@ -430,91 +512,5 @@ public class libraryDAO {
 			DataAccess2.CloseConnection3(stmt, conn);
 		}
 		return v;
-	}
-
-	// 插入借阅记录
-	public static boolean InsertLend_return(SelectDTO sdto) {
-		boolean flag = false;
-		String a = null;
-		String b = null;
-		String c = null;
-		String d = null;
-		String rno = sdto.getRno();
-		String number = sdto.getNumber();
-		String lendDate = sdto.getLendDate();
-		String returnDate = sdto.getReturnDate();
-		int status = sdto.getStatus();
-		Connection conn = null;
-		Statement stat = null;
-		Statement stat1 = null;
-		Statement stat2 = null;
-		Statement stat3 = null;
-		Statement stat4 = null;
-		Statement stat5 = null;
-		ResultSet rs = null;
-		ResultSet rs1 = null;
-		try {
-			conn = DataAccess2.getConnection();
-			stat = conn.createStatement();
-			stat1 = conn.createStatement();
-			stat2 = conn.createStatement();
-			stat3 = conn.createStatement();
-			stat4 = conn.createStatement();
-			stat5 = conn.createStatement();
-			String sql = "select * from book where number = '" + number
-					+ "'";
-			rs = stat.executeQuery(sql);
-			while (rs.next()) {
-				a = rs.getString("booklend");
-				System.out.println(a);
-				if (a.equalsIgnoreCase("Y")) {
-					String sql1 = "insert into lend_return values" + "('" + rno
-							+ "','" + number + "','" + lendDate + "','"
-							+ returnDate + "','" + status + "')";
-					stat1.executeUpdate(sql1);
-					
-					String sql2 = "select * from lend_return where rno='" + rno
-							+ "' and number='" + number + "' and lendDate='"
-							+ lendDate + "'";
-					rs1 = stat2.executeQuery(sql2);
-					while (rs1.next()) {
-						b = rs1.getString("lendDate");
-						c = rs1.getString("returnDate");
-						d = rs1.getString("number");
-						System.out.println(b);
-						System.out.println(c);
-						System.out.println(d);								
-						if (!b.equalsIgnoreCase("null")) {
-							if (c.equalsIgnoreCase("null")) {
-								String sql3 = "update book set booklend = 'N' where number = '"
-										+ d + "' ";
-								stat3.executeUpdate(sql3);
-							} else {
-								String sql4 = "update book set booklend = 'Y' where number = '"
-										+ d + "' ";
-								stat4.executeUpdate(sql4);
-							}
-
-						} else {
-							String sql5 = "update book set booklend = 'Y' where number = '"
-									+ d + "' ";
-							stat5.executeUpdate(sql5);
-						}
-					}
-					flag = true;
-				} else if (a.equalsIgnoreCase("N")) {
-					flag = false;
-				}
-			}
-
-			
-			
-		} catch (SQLException e) {
-			System.out.println("运行sql语句时出现错误");
-			e.printStackTrace();
-		} finally {
-			DataAccess2.CloseConnection3(stat, conn);
-		}
-		return flag;
 	}
 }

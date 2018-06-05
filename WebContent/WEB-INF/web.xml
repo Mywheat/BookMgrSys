@@ -245,4 +245,14 @@
 		<url-pattern>/Admin/insertLend_returnServlet</url-pattern>
 	</servlet-mapping>
 	
+	<!-- 2018.06.05 DeleteLend_returnCheckServlet -->
+	<servlet>
+		<servlet-name>DeleteLend_returnCheckServlet</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.DeleteLend_returnCheckServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteLend_returnCheckServlet</servlet-name>
+		<url-pattern>/Admin/deleteLend_returnCheckServlet</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
