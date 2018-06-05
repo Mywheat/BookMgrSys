@@ -37,21 +37,21 @@
 				<tbody>
 					<tr>
 						<!-- 不允许rno修改 -->
-						<td><input style="width: 125px" type="text" readOnly="true" name="number"
+						<td><input style="width: 100px" type="text" readOnly="true" name="number"
 							value=<%=sdto.getNumber()%>></td>
-						<td><input style="width: 125px" type="text" name="bname"
+						<td><input style="width: 100px" type="text" name="bname"
 							value=<%=sdto.getBname()%>></td>
-						<td><input style="width: 125px" type="text" name="author"
+						<td><input style="width: 100px" type="text" name="author"
 							value=<%=sdto.getAuthor()%>></td>
-						<td><input style="width: 125px" type="text" name="bookpub"
+						<td><input style="width: 100px" type="text" name="bookpub"
 							value=<%=sdto.getBookpub()%>></td>
-						<td><input style="width: 125px" type="text" name="bookpubdate"
+						<td><input style="width: 100px" type="text" name="bookpubdate"
 							value=<%=sdto.getBookpubdate()%>></td>
-						<td><input style="width: 125px" type="text" readOnly="true" name="booklend"
+						<td><input style="width: 100px" type="text" readOnly="true" name="booklend"
 							value=<%=sdto.getBooklend()%>></td>
-						<td><input style="width: 125px" type="text" name="status"
+						<td><input style="width: 100px" type="text" name="status"
 							value=<%=sdto.getStatus()%>></td>
-						<td><input style="width: 125px" type="submit" value="确认修改"></td>
+						<td><input style="width: 100px" type="submit" value="确认修改"></td>
 					</tr>
 				</tbody>
 				<%

@@ -27,14 +27,14 @@
 
 				<tbody>
 					<tr>
-						<td><input style="width:125px" type="text" name="number"></td>
-						<td><input style="width:125px" type="text" name="bname"></td>
-						<td><input style="width:125px" type="text" name="author"></td>
-						<td><input style="width:125px" type="text" name="bookpub"></td>
-						<td><input style="width:125px" type="text" name="bookpubdate"></td>
-						<td><input style="width:125px" type="text" name="booklend"></td>
-						<td><input style="width:125px" type="text" name="status"></td>
-						<td><input style="width:125px" type="submit" value="确认添加"></td>
+						<td><input style="width:100px" type="text" name="number"></td>
+						<td><input style="width:100px" type="text" name="bname"></td>
+						<td><input style="width:100px" type="text" name="author"></td>
+						<td><input style="width:100px" type="text" name="bookpub"></td>
+						<td><input style="width:100px" type="text" name="bookpubdate"></td>
+						<td><input style="width:100px" type="text" name="booklend"></td>
+						<td><input style="width:100px" type="text" name="status"></td>
+						<td><input style="width:100px" type="submit" value="确认添加"></td>
 					</tr>
 				</tbody>
 			</table>

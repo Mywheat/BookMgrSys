@@ -255,4 +255,34 @@
 		<url-pattern>/Admin/deleteLend_returnCheckServlet</url-pattern>
 	</servlet-mapping>
 	
+	<!-- 2018.06.05 LookAllBook -->
+	<servlet>
+		<servlet-name>LookAllBook</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.LookAllBook</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LookAllBook</servlet-name>
+		<url-pattern>/Admin/lookAllBook</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.06.05 LookLend_return -->
+	<servlet>
+		<servlet-name>LookLend_return</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.LookLend_return</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LookLend_return</servlet-name>
+		<url-pattern>/Admin/lookLend_return</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.06.05 LookAllReader -->
+	<servlet>
+		<servlet-name>LookAllReader</servlet-name>
+		<servlet-class>cn.edu.lingnan.Servlet.LookAllReader</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LookAllReader</servlet-name>
+		<url-pattern>/Admin/lookAllReader</url-pattern>
+	</servlet-mapping>
+	
 </web-app>

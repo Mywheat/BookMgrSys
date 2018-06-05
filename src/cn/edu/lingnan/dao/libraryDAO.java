@@ -17,6 +17,33 @@ import com.mysql.jdbc.Connection;
 public class libraryDAO {
 
 	// 查找读者基本信息 （显示读者全部信息）
+	public Vector<SelectDTO> LookAllReaderIfo() {
+		Vector<SelectDTO> v = new Vector<SelectDTO>();
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		try {
+			conn = DataAccess2.getConnection();
+			stmt = conn.createStatement(); // 创建sql语句对象
+			rs = stmt.executeQuery("select * from reader"); // 执行sql语句，并将查询结果返回给ResultSet对象
+			while (rs.next()) {
+				SelectDTO r = new SelectDTO();
+				r.setRno(rs.getString("rno"));
+				r.setRname(rs.getString("rname"));
+				r.setPassword(rs.getString("password"));
+				r.setSuperuser(rs.getInt("superuser"));
+				v.add(r);
+			}
+		} catch (SQLException e) {
+			System.out.println("运行sql语句时出现错误");
+			e.printStackTrace();
+		} finally {
+			DataAccess2.CloseConnection2(rs, stmt, conn);
+		}
+		return v;
+	}
+	
+	//操作用户显示页面（增删查改）
 	public Vector<SelectDTO> FindAllReaderIfo() {
 		Vector<SelectDTO> v = new Vector<SelectDTO>();
 		Connection conn = null;
@@ -56,9 +83,9 @@ public class libraryDAO {
 			prep.setString(1, rname);
 			prep.setString(2, password);
 			rs = prep.executeQuery();
-			while(rs.next()) {
+			while (rs.next()) {
 				supervalue = rs.getInt("superuser");
-				//System.out.println("检测1-------"+supervalue);
+				// System.out.println("检测1-------"+supervalue);
 			}
 		} catch (SQLException e) {
 			System.out.println("运行sql语句时出现错误");
@@ -178,7 +205,37 @@ public class libraryDAO {
 		return v;
 	}
 
-	// 查找书籍基本信息 （显示书籍全部信息）
+	// 查看书籍全部信息
+	public Vector<SelectDTO> LookAllBookIfo() {
+		Vector<SelectDTO> v = new Vector<SelectDTO>();
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		try {
+			conn = DataAccess2.getConnection();
+			stmt = conn.createStatement(); // 创建sql语句对象
+			rs = stmt.executeQuery("select * from book"); // 执行sql语句，并将查询结果返回给ResultSet对象
+			while (rs.next()) {
+				SelectDTO r = new SelectDTO();
+				r.setNumber(rs.getString("number"));
+				r.setBname(rs.getString("bname"));
+				r.setAuthor(rs.getString("author"));
+				r.setBookpub(rs.getString("bookpub"));
+				r.setBookpubdate(rs.getString("bookpubdate"));
+				r.setBooklend(rs.getString("booklend"));
+				r.setStatus(rs.getInt("status"));
+				v.add(r);
+			}
+		} catch (SQLException e) {
+			System.out.println("运行sql语句时出现错误");
+			e.printStackTrace();
+		} finally {
+			DataAccess2.CloseConnection2(rs, stmt, conn);
+		}
+		return v;
+	}
+
+	// 操作书籍 显示页面（增删查改后的页面）
 	public Vector<SelectDTO> FindAllBookIfo() {
 		Vector<SelectDTO> v = new Vector<SelectDTO>();
 		Connection conn = null;
@@ -302,6 +359,35 @@ public class libraryDAO {
 	}
 
 	// 查找借阅记录 （显示借阅记录全部信息）
+	public Vector<SelectDTO> LookLend_return() {
+		Vector<SelectDTO> v = new Vector<SelectDTO>();
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		try {
+			conn = DataAccess2.getConnection();
+			stmt = conn.createStatement(); // 创建sql语句对象
+			rs = stmt
+					.executeQuery("select * from lend_return"); // 执行sql语句，并将查询结果返回给ResultSet对象
+			while (rs.next()) {
+				SelectDTO r = new SelectDTO();
+				r.setRno(rs.getString("rno"));
+				r.setNumber(rs.getString("number"));
+				r.setLendDate(rs.getString("lendDate"));
+				r.setReturnDate(rs.getString("returnDate"));
+				r.setStatus(rs.getInt("status"));
+				v.add(r);
+			}
+		} catch (SQLException e) {
+			System.out.println("运行sql语句时出现错误");
+			e.printStackTrace();
+		} finally {
+			DataAccess2.CloseConnection2(rs, stmt, conn);
+		}
+		return v;
+	}
+
+	// 操作借阅记录页面（增删改查）
 	public Vector<SelectDTO> FindLend_return() {
 		Vector<SelectDTO> v = new Vector<SelectDTO>();
 		Connection conn = null;

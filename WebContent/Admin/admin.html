@@ -1,123 +1,168 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
-<title>AdminPage</title>
-
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="cache-Control" content="no-cache">
-<meta http-equiv="expires" content="0">
-
-
-<link href="css1/bootstrap.css" rel='stylesheet' type='text/css' />
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js1/jquery.min.js"></script>
-<!---- start-smoth-scrolling---->
-<script type="text/javascript" src="js1/move-top.js"></script>
-<script type="text/javascript" src="js1/easing.js"></script>
-<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-				});
-			});
-		</script>
-<!---- start-smoth-scrolling---->
-<!-- Custom Theme files -->
-<link href="css1/style.css" rel='stylesheet' type='text/css' />
-<!-- Custom Theme files -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-</script>
-<!----webfonts--->
-<link
-	href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic'
-	rel='stylesheet' type='text/css'>
-<!---//webfonts--->
-
+<meta charset="utf-8">
+<title>管理员页面</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="./css/x-admin.css" media="all">
 </head>
 <body>
-	<!----start-slider-script---->
-	<script src="js1/responsiveslides.min.js"></script>
-	<script>
-			    // You can also use "$(window).load(function() {"
-			    $(function () {
-			      // Slideshow 4
-			      $("#slider4").responsiveSlides({
-			        auto: true,
-			        pager: true,
-			        nav: true,
-			        speed: 500,
-			        namespace: "callbacks",
-			        before: function () {
-			          $('.events').append("<li>before event fired.</li>");
-			        },
-			        after: function () {
-			          $('.events').append("<li>after event fired.</li>");
-			        }
-			      });
-			
-			    });
-			  </script>
-	<!----//End-slider-script---->
-	<!-- Slideshow 4 -->
-	<div id="top" class="callbacks_container">
-		<ul class="rslides" id="slider4">
-			<li><img src="images/1.jpg" alt="">
-				<div class="caption bounceInDown" data-wow-delay="0.4s">
-					<div class="slide-text-info"></div>
-				</div></li>
-			<li><img src="images/3.jpg" alt="">
-				<div class="caption">
-					<div class="slide-text-info bounceInDown" data-wow-delay="0.4s">
-					</div>
-				</div></li>
-			<li><img src="images/2.jpg" alt="">
-				<div class="caption">
-					<div class="slide-text-info bounceInDown" data-wow-delay="0.4s">
-					</div>
-				</div></li>
-		</ul>
-	</div>
-	<div class="clearfix"></div>
-	<!----- //End-slider---->
-	<!---- top-grids ---->
-	<div id="about" class="top-grids text-center">
-		<div class="container">
-			<div class="col-md-4">
-				<div class="top-grid">
-					<span><label class="icon3"> </label></span>
-					<h3>
-						<a href="findAllReader">reader</a>
-					</h3>
-					<p>Please press "reader" You can select update and delete
-						readers according to your demand</p>
-				</div>
+	<div class="layui-layout layui-layout-admin">
+		<div class="layui-header header header-demo">
+			<div class="layui-main">
+				<a class="logo"> <img src="images/banner2.png"></img>
+				</a>
+				<ul class="layui-nav" lay-filter="">
+					<li class="layui-nav-item"><img src="images/0.jpg"
+						class="layui-circle" style="border: 2px solid #A9B7B7;"
+						width="35px" alt=""></li>
+					<li class="layui-nav-item"><a href="javascript:;">admin</a></li>
+					<li class="layui-nav-item x-index"><a href="../OK.html">返回上一页</a></li>
+				</ul>
 			</div>
-			<div class="col-md-4">
-				<div class="top-grid">
-					<span><label class="icon1"> </label></span>
-					<h3>
-						<a href="findAllBook">book</a>
-					</h3>
-					<p>Please press "book" You can select insert update and delete
-						books according to your demand</p>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="top-grid">
-					<span><label class="icon2"> </label></span>
-					<h3>
-						<a href="findLend_return">lend_return</a>
-					</h3>
-					<p>Please press "lend_return" You can select and operate
-						lend_return records according to your demand</p>
-				</div>
-			</div>
-			<div class="clearfix"></div>
 		</div>
+		<div class="layui-side layui-bg-black x-side">
+			<div class="layui-side-scroll">
+				<ul class="layui-nav layui-nav-tree site-demo-nav" lay-filter="side">
+					<!--引导页面-->
+                        <li class="layui-nav-item">
+                            <a class="javascript:;" href="javascript:;" _href="../picture.html">
+                                <i style="top: 3px;"></i>
+                            </a>
+                        </li>
+                        
+					<!--用户管理-->
+					<li class="layui-nav-item"><a class="javascript:;"
+						href="javascript:;"> <i class="layui-icon" style="top: 3px;">&#xe629;</i><cite>用户信息管理</cite>
+					</a>
+						<dl class="layui-nav-child">
+							<dd class="">
+							<dd class="">
+								<a href="javascript:;" _href="lookAllReader"> <i
+									class="layui-icon"></i><cite>查看用户</cite>
+								</a>
+							</dd>
+							</dd>
+
+
+							<dd class="">
+							<dd class="">
+								<a href="javascript:;" _href="findAllReader"> <i
+									class="layui-icon"></i><cite>用户操作</cite>
+								</a>
+							</dd>
+							</dd>
+
+							<dd class="">
+							<dd class="">
+								<a href="javascript:;" _href="insertReaderIfo.jsp"> <i
+									class="layui-icon"></i><cite>添加用户</cite>
+								</a>
+							</dd>
+							</dd>
+						</dl></li>
+
+					<!--书籍信息管理-->
+					<li class="layui-nav-item"><a class="javascript:;"
+						href="javascript:;"> <i class="layui-icon" style="top: 3px;">&#xe629;</i><cite>书籍信息管理</cite>
+					</a>
+						<dl class="layui-nav-child">
+							<dd class="">
+							<dd class="">
+								<a href="javascript:;" _href="lookAllBook"> <i
+									class="layui-icon"></i><cite>查看书籍</cite>
+								</a>
+							</dd>
+							</dd>
+
+
+							<dd class="">
+							<dd class="">
+								<a href="javascript:;" _href="findAllBook"> <i
+									class="layui-icon"></i><cite>书籍操作</cite>
+								</a>
+							</dd>
+							</dd>
+
+							<dd class="">
+							<dd class="">
+								<a href="javascript:;" _href="insertBookIfo.jsp"> <i
+									class="layui-icon"></i><cite>添加书籍</cite>
+								</a>
+							</dd>
+							</dd>
+						</dl></li>
+
+					<!--借阅记录管理-->
+					<li class="layui-nav-item"><a class="javascript:;"
+						href="javascript:;"> <i class="layui-icon" style="top: 3px;">&#xe629;</i><cite>借阅记录管理</cite>
+					</a>
+						<dl class="layui-nav-child">
+							<dd class="">
+							<dd class="">
+								<a href="javascript:;" _href="lookLend_return"> <i
+									class="layui-icon"></i><cite>查看借阅记录</cite>
+								</a>
+							</dd>
+							</dd>
+							<dd class="">
+							<dd class="">
+								<a href="javascript:;" _href="findLend_return"> <i
+									class="layui-icon"></i><cite>借阅记录操作</cite>
+								</a>
+							</dd>
+							</dd>
+							<dd class="">
+							<dd class="">
+								<a href="javascript:;" _href="insertLend_return.jsp"> <i
+									class="layui-icon"></i><cite>添加借阅记录</cite>
+								</a>
+							</dd>
+							</dd>
+						</dl></li>
+						
+						<!--用户注销管理-->
+                        <li class="layui-nav-item">
+                            <a class="javascript:;" href="../logoutServlet">
+                                <i class="layui-icon" style="top: 3px;">&#xe612;</i><cite>用户注销管理</cite>
+                            </a>
+                        </li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="layui-tab layui-tab-card site-demo-title x-main"
+			lay-filter="x-tab" lay-allowclose="true">
+			<div class="x-slide_left"></div>
+			<ul class="layui-tab-title">
+				<li class="layui-this">FIRSTPAGE<i
+					class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				</li>
+			</ul>
+			<div class="layui-tab-content site-demo site-demo-body">
+				<div class="layui-tab-item layui-show">
+					<iframe frameborder="0" src="../picture.html" class=" x-iframe"></iframe>
+				</div>
+			</div>
+		</div>
+		<div class="site-mobile-shade"></div>
 	</div>
+	<script src="./lib/layui/layui.js" charset="utf-8"></script>
+	<script src="./js/x-admin.js"></script>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
 </body>
 </html>
-
