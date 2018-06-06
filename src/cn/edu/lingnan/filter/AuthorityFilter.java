@@ -34,10 +34,12 @@ public class AuthorityFilter implements Filter {
 				resp.sendRedirect(req.getContextPath() + "/index.html");
 			}				
 			else 
-				if (supervalue2 == 1)
-					arg2.doFilter(arg0, arg1); // 往下一级传递，如果没有下一级，直接调用资源(即是你想去哪就去哪)		
-			    else
+				if (supervalue2 == 1){
+					arg2.doFilter(arg0, arg1); // 往下一级传递，如果没有下一级，直接调用资源(即是你想去哪就去哪)				
+				}		
+			    else{
 			    	resp.sendRedirect(req.getContextPath()+ "/authority.html");
+			    }			    	
 		}
 		else
 		{

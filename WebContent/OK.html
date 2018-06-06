@@ -43,18 +43,19 @@
 			<div class="row probootstrap-vh-100 align-items-center text-center">
 				<div class="col-sm">
 					<div class="probootstrap-text">
-						<h1 class="probootstrap-heading text-white mb-4">login in successfully!</h1>
+						<h1 class="probootstrap-heading text-white mb-4">login in
+							successfully!</h1>
 						<div class="probootstrap-subheading mb-5">
-							<p class="h4 font-weight-normal">
-								你已经登录成功了喔！
-							</p>
+							<p class="h4 font-weight-normal">你已经登录成功了喔！</p>
 						</div>
 						<p>
-							<a href="Admin/admin.html"
-								class="btn btn-primary mr-2 mb-2">用户权限过滤</a><a
-								href="logoutServlet"
-								class="btn btn-primary btn-outline-white mb-2">用户账号注销</a>
+							<form action="./Admin/admin.html" method="post">
+							<input type="submit" name="btnLogin" class="btn btn-primary btn-outline-white mb-2" value="用户权限过滤" /> 
+							</form>
+<!--  							<a href="Admin/admin.html" class="btn btn-primary btn-outline-white mb-2">用户权限过滤</a> -->  
+							<a href="logoutServlet" class="btn btn-primary mr-2 mb-2">用户账号注销</a>
 						</p>
+						
 					</div>
 				</div>
 			</div>
