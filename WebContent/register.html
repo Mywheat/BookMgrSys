@@ -1,23 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>注册页面</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Bubble Login Form template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- Custom Theme files -->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<!-- //Custom Theme files -->
-<!-- js -->
-<script src="js/jquery-2.2.3.min.js"></script>
-<!-- //js --> 
-<!-- web font -->  
-<link href="http://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
-<link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
-<!-- //web font --> 
-
-<script>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+		<title>用户注册</title>
+		<link rel="stylesheet" href="lib/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="css/login.css" />
+	<script>
  	function check(){
  		if(form.rno.value == ""){
  			alert("rno不能为空...");  //弹出rno不能为空
@@ -93,33 +84,53 @@
  	
 </script>
 
-</head>
-<body class="video" data-vide-bg="video/bubble">
-	<!-- main -->
-	<div class="main">
-		<h1>Reader Register Page</h1>
-		<div class="main-w3lsrow">
-			<!-- login form -->
-			<div class="login-form login-form-left"> 
-				<div class="agile-row">
-					<h2>Reader Register</h2> 
-					<div class="login-agileits-top"> 	
-						<form name="form" action="registerservlet" autocomplete="on" method="post"> 
-						    <input type="text" id="rno" name="rno" placeholder="rno" required=""/>
-						    <p>
-							<input type="text" id="rname" name="rname" placeholder="rname" required="" onBlur="rnameCheck()"/>
-							<p>
-							<input type="password" id="password" name="password" placeholder="password" required=""/>
-							<p>
-							<input type="password" id="superuser" name="superuser" placeholder="superuser" required=""/>  
-							<input type="submit" value="Register" onClick="return check();"> 
-						</form> 	
-					</div> 
-				</div>  
-			</div>  
-		</div>	
-	</div>	
-	<!-- //main --> 
-	<script src="js/jquery.vide.min.js"></script> 
-</body>
+	</head>
+
+	<body class="beg-login-bg" background="images/bg.jpg">
+		<div class="beg-login-box">
+			
+			<div class="beg-login-main">
+				<form name="form" action="registerServlet" class="layui-form" method="post">             
+                <!---->
+                <div class="layui-form-item">
+						<label class="beg-login-icon">
+                        <i class="layui-icon">&#xe612;</i>
+                    </label>
+					</div>
+                <!---->
+                
+					<div class="layui-form-item">
+						<label class="beg-login-icon">
+                        <i class="layui-icon">&#xe62d;</i>
+                        </label>
+					    <input type="text" id="rno" name="rno" lay-verify="rname" autocomplete="off" placeholder="请输入用户编号" class="layui-input">
+					</div>					
+					<div class="layui-form-item">
+						<label class="beg-login-icon">
+                        <i class="layui-icon">&#xe612;</i>
+                        </label>
+					    <input type="text" id="rname" name="rname" lay-verify="rname" autocomplete="off" placeholder="请输入用户名" class="layui-input">
+					</div>
+					<div class="layui-form-item">
+						<label class="beg-login-icon">
+                        <i class="layui-icon">&#xe642;</i>
+                        </label>
+						<input type="password" id="password" name="password" lay-verify="password" autocomplete="off" placeholder="请输入密码" class="layui-input">
+					</div>				
+					<div class="layui-form-item">
+						<label class="beg-login-icon">
+                        <i class="layui-icon">&#xe629;</i>
+                        </label>
+						<input type="text" id="superuser" name="superuser" lay-verify="password" autocomplete="off" placeholder="请输入权限" class="layui-input">
+					</div>
+					
+						
+						<input type="submit" value="注册" style="width:100%" onClick="return check();">
+								
+				</form>
+			</div>
+            
+		</div>
+	</body>
+
 </html>

@@ -124,7 +124,7 @@
 			<i class="layui-icon">&#xe640;</i>批量删除
 		</button>
 
-		<a href="admin.html" class="layui-btn layui-btn-danger">返回上页</a>
+		<a href="admin.jsp" class="layui-btn layui-btn-danger">返回上页</a>
 	</div>
 </body>
 </html>

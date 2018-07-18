@@ -1,8 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=GB2312"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>管理员页面</title>
+
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-Control" content="no-cache">
+<meta http-equiv="expires" content="0">
+
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport"
@@ -24,7 +31,7 @@
 						class="layui-circle" style="border: 2px solid #A9B7B7;"
 						width="35px" alt=""></li>
 					<li class="layui-nav-item"><a href="javascript:;">admin</a></li>
-					<li class="layui-nav-item x-index"><a href="../OK.html">返回上一页</a></li>
+					<li class="layui-nav-item x-index"><a href="../index.html">返回上一页</a></li>
 				</ul>
 			</div>
 		</div>
@@ -143,7 +150,7 @@
 			<div class="x-slide_left"></div>
 			<ul class="layui-tab-title">
 				<li class="layui-this">FIRSTPAGE<i
-					class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+					class="layui-icon layui-unselect layui-tab-close"></i>
 				</li>
 			</ul>
 			<div class="layui-tab-content site-demo site-demo-body">

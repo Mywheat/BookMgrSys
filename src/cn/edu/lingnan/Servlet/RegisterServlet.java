@@ -39,6 +39,6 @@ public class RegisterServlet extends HttpServlet {
 		if(flag)
 			resp.sendRedirect(req.getContextPath()+"/index.html");  //req.getContextPath()取OK.html的工程路径
 		else
-			resp.sendRedirect(req.getContextPath()+"/Error.html");
+			resp.sendRedirect(req.getContextPath()+"/register.html");
 	}
 }

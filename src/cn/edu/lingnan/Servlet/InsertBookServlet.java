@@ -40,7 +40,7 @@ public class InsertBookServlet extends HttpServlet {
 		sdto.setNumber(number);
 		sdto.setBname(bname);
 		sdto.setAuthor(author);
-		sdto.setBookpub(bookpubdate);
+		sdto.setBookpub(bookpub);
 		sdto.setBookpubdate(bookpubdate);
 		sdto.setBooklend(booklend);
 		sdto.setStatus(status);

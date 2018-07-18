@@ -32,6 +32,7 @@ public class libraryDAO {
 				r.setRname(rs.getString("rname"));
 				r.setPassword(rs.getString("password"));
 				r.setSuperuser(rs.getInt("superuser"));
+				r.setStatus(rs.getInt("status"));
 				v.add(r);
 			}
 		} catch (SQLException e) {
@@ -96,7 +97,7 @@ public class libraryDAO {
 		return supervalue;
 	}
 
-	// 登录时判断该用户名是否存在
+	// 注册时判断该用户名是否存在
 	public boolean FindReaderByRname(String rname) {
 		boolean flag = false;
 		Connection conn = null;
@@ -174,27 +175,33 @@ public class libraryDAO {
 	}
 
 	// 根据rno软删除读者信息（刪除读者信息）
-	public Vector<SelectDTO> DeleteReaderByRno(String rno) {
-		Vector<SelectDTO> v = new Vector<SelectDTO>();
+	public boolean DeleteReaderByRno(String rno) {
+		boolean flag = false;
 		Connection conn = null;
 		Statement stmt = null;
+		Statement stmt1 = null;
 		ResultSet rs = null;
+		ResultSet rs1 = null;
+		String returnDate1 = null; 
+		int num = 0;
 		try {
 			conn = DataAccess2.getConnection();
 			stmt = conn.createStatement();
-			String sql = "update reader set status = 1 where rno = '" + rno
-					+ "'";
-			stmt.executeUpdate(sql);
-			String sql1 = "select * from reader where status = 0";
-			rs = stmt.executeQuery(sql1);
-			while (rs.next()) {
-				SelectDTO r = new SelectDTO();
-				r.setRno(rs.getString("rno"));
-				r.setRname(rs.getString("rname"));
-				r.setPassword(rs.getString("password"));
-				r.setSuperuser(rs.getInt("superuser"));
-				r.setStatus(rs.getInt("status"));
-				v.add(r);
+			stmt1 = conn.createStatement();
+			String sql2 = "select * from lend_return where rno = '" +rno +"'";
+			rs1 = stmt1.executeQuery(sql2);
+			while(rs1.next()){
+				returnDate1 = rs1.getString("returnDate");
+				if((returnDate1.trim()).equalsIgnoreCase("null")){
+					num++;
+					break;
+				}
+			}
+			if(num == 0){
+				String sql = "update reader set status = 1 where rno = '" + rno
+						+ "'";
+				stmt.executeUpdate(sql);
+				flag = true;
 			}
 		} catch (SQLException e) {
 			System.out.println("运行sql语句时出现错误");
@@ -202,7 +209,7 @@ public class libraryDAO {
 		} finally {
 			DataAccess2.CloseConnection3(stmt, conn);
 		}
-		return v;
+		return flag;
 	}
 
 	// 查看书籍全部信息
@@ -488,7 +495,6 @@ public class libraryDAO {
 	public static boolean InsertLend_return(SelectDTO sdto) {
 		boolean flag = false;
 		String a = null;
-		String b = null;
 		String c = null;
 		String d = null;
 		String rno = sdto.getRno();
@@ -523,19 +529,15 @@ public class libraryDAO {
 							+ "','" + number + "','" + lendDate + "','"
 							+ returnDate + "','" + status + "')";
 					stat1.executeUpdate(sql1);
-
 					String sql2 = "select * from lend_return where rno='" + rno
 							+ "' and number='" + number + "' and lendDate='"
 							+ lendDate + "'";
 					rs1 = stat2.executeQuery(sql2);
 					while (rs1.next()) {
-						b = rs1.getString("lendDate");
 						c = rs1.getString("returnDate");
 						d = rs1.getString("number");
-						System.out.println(b);
 						System.out.println(c);
 						System.out.println(d);
-						if (!b.equalsIgnoreCase("null")) {
 							if (c.equalsIgnoreCase("null")) {
 								String sql3 = "update book set booklend = 'N' where number = '"
 										+ d + "' ";
@@ -544,18 +546,13 @@ public class libraryDAO {
 								String sql4 = "update book set booklend = 'Y' where number = '"
 										+ d + "' ";
 								stat4.executeUpdate(sql4);
-							}
-
-						} else {
-							String sql5 = "update book set booklend = 'Y' where number = '"
-									+ d + "' ";
-							stat5.executeUpdate(sql5);
-						}
+							}						
 					}
 					flag = true;
 				} else if (a.equalsIgnoreCase("N")) {
 					flag = false;
-				}
+					
+				}				
 			}
 		} catch (SQLException e) {
 			System.out.println("运行sql语句时出现错误");

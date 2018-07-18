@@ -7,8 +7,20 @@
 <title>插入借阅记录</title>
 <link rel="stylesheet" href="./css1/x-admin.css" media="all">
 </head>
+
+<script  language="javascript">
+function check(){
+var regm = /^[n]+[u]+[l]+[l]?$/;
+	if(!form.returnDate.value.match(regm)){
+		alert("returnDate只能插入null，请重新输入null...");
+		form.returnDate.focus();
+		return false;
+	}
+}
+</script>
+
 <body>
-	<form action="insertLend_returnServlet">
+	<form name="form" action="insertLend_returnServlet">
 		<div class="x-body">
 			<table class="layui-table">
 				<thead>
@@ -27,9 +39,9 @@
 						<td><input style="width: 125px" type="text" name="rno"></td>
 						<td><input style="width: 125px" type="text" name="number"></td>
 						<td><input style="width: 125px" type="text" name="lendDate"></td>
-						<td><input style="width: 125px" type="text" name="returnDate"></td>
+						<td><input style="width: 125px" type="text" id="returnDate" name="returnDate"></td>
 						<td><input style="width: 125px" type="text" name="status"></td>
-						<td><input style="width: 125px" type="submit" value="确认添加"></td>
+						<td><input style="width: 125px" type="submit" value="确认添加 " onClick="return check();"></td>
 					</tr>
 				</tbody>
 			</table>

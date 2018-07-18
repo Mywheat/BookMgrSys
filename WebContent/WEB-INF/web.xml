@@ -60,7 +60,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>RegisterServlet</servlet-name>
-		<url-pattern>/registerservlet</url-pattern>
+		<url-pattern>/registerServlet</url-pattern>
 	</servlet-mapping>
 	
 	<!-- 2018.05.10 LogoutServlet -->
@@ -284,5 +284,86 @@
 		<servlet-name>LookAllReader</servlet-name>
 		<url-pattern>/Admin/lookAllReader</url-pattern>
 	</servlet-mapping>
+	
+	<!-- 2018.06.08 LookAllBook1 -->
+	<servlet>
+		<servlet-name>LookAllBook1</servlet-name>
+		<servlet-class>cn.edu.lingnan.AuthorityServlet.LookAllBook1</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LookAllBook1</servlet-name>
+		<url-pattern>/lookAllBook1</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.06.08 LookAuthority -->
+	<servlet>
+		<servlet-name>LookAuthority</servlet-name>
+		<servlet-class>cn.edu.lingnan.AuthorityServlet.LookAuthority</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LookAuthority</servlet-name>
+		<url-pattern>/lookAuthority</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.06.08 UpdateReader -->
+	<servlet>
+		<servlet-name>UpdateReader</servlet-name>
+		<servlet-class>cn.edu.lingnan.AuthorityServlet.UpdateReader</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateReader</servlet-name>
+		<url-pattern>/updateReader</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.06.08 LendBook -->
+	<servlet>
+		<servlet-name>LendBook</servlet-name>
+		<servlet-class>cn.edu.lingnan.AuthorityServlet.LendBook</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LendBook</servlet-name>
+		<url-pattern>/lendBook</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.06.09 LookLendBook -->
+	<servlet>
+		<servlet-name>LookLendBook</servlet-name>
+		<servlet-class>cn.edu.lingnan.AuthorityServlet.LookLendBook</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LookLendBook</servlet-name>
+		<url-pattern>/lookLendBook</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.06.09 FindLendBook -->
+	<servlet>
+		<servlet-name>FindLendBook</servlet-name>
+		<servlet-class>cn.edu.lingnan.AuthorityServlet.FindLendBook</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindLendBook</servlet-name>
+		<url-pattern>/findLendBook</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.06.09 ReturnBook -->
+	<servlet>
+		<servlet-name>ReturnBook</servlet-name>
+		<servlet-class>cn.edu.lingnan.AuthorityServlet.ReturnBook</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ReturnBook</servlet-name>
+		<url-pattern>/returnBook</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2018.06.09 FindReturnBook -->
+	<servlet>
+		<servlet-name>FindReturnBook</servlet-name>
+		<servlet-class>cn.edu.lingnan.AuthorityServlet.FindReturnBook</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindReturnBook</servlet-name>
+		<url-pattern>/findReturnBook</url-pattern>
+	</servlet-mapping>
+	
 	
 </web-app>

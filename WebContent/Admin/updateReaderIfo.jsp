@@ -48,8 +48,6 @@
 						<td><input type="submit" value="È·ÈÏÐÞ¸Ä"></td>
 					</tr>
 				</tbody>
-
-
 				<%
 					}
 					}
